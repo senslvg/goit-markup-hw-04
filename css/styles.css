@@ -1,0 +1,442 @@
+/*CSS переменные для цвета */
+:root {
+  --primary-text-color: #757575;
+  --title-text-color: #212121;
+  --accent-color: #2196f3;
+  --second-text-color: #f5f5f5;
+  --white-text-color: #ffffff;
+  --footer-background-color: #2f303a;
+  --header-border-color: #ececec;
+  --ourteam-bacground-color: #f5f4fa;
+  --portfolio-background-color: #e5e5e5;
+  --portfolio-border-color: #eeeeee;
+  --portfolio-radiobutton-shawdow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  --ourteam-card-shawdow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+/* Global */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  background-color: var(--white-text-color);
+  color: var(--title-text-color);
+}
+
+/* Скрытие не отображаемых элементов */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* Сброс атрибутов списков */
+.list {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+/* Сброс атрибутов ссылок(подчеркивание) */
+.link {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Hover - Focus */
+.nav-link:hover,
+.nav-link:focus,
+.contacts-link:hover,
+.contacts-link:focus,
+.footer-link-map:hover,
+.footer-link-map:focus,
+.footer-link:hover,
+.footer-link:focus,
+.radiobutton:focus {
+  color: var(--accent-color);
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.section {
+  padding-bottom: 94px;
+  padding-top: 94px;
+}
+/* --------------------------------------------  */
+
+/* Main-nav */
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+.header {
+  border-bottom: 1px solid var(--header-border-color);
+}
+.main.nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo WebStudio Header */
+.logo-link {
+  margin-right: 93px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+.logo-web,
+.footer-logo-web {
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  color: var(--accent-color);
+}
+.logo-studio {
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  color: #000000;
+}
+.footer-logo-studio {
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  color: var(--white-text-color);
+}
+
+/* Панель навигации */
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+
+/* .nav-item + .nav-item{
+  margin-left: 50px;
+} */
+.nav-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+/* Область навигации */
+.nav-link,
+.nav-link-active {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--title-text-color);
+}
+/* Подсветка текущей страницы */
+.nav-link-active {
+  color: var(--accent-color);
+}
+
+/* Контакты header */
+.contacts-link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--primary-text-color);
+}
+
+.contacts-item:not(:last-child) {
+  margin-right: 50px;
+}
+.contacts-list {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+/* Hero */
+.hero-section {
+  background-color: var(--footer-background-color);
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+.hero {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  width: 696px;
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white-text-color);
+}
+
+.button {
+  display: flex;
+  padding: 10px 32px;
+  border: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: auto;
+  margin-left: auto;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: var(--white-text-color);
+  background-color: var(--accent-color);
+}
+
+/* Секция Наши услуги portfolio.html */
+.menu-header {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: var(--title-text-color);
+}
+
+/* Секция наши услуги portfolio.html */
+.menu-text {
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+}
+
+/* Секция Наши преимущества (Заголовки) */
+.about-list {
+  display: flex;
+}
+.about-item:not(:last-child) {
+  margin-right: 30px;
+}
+.about-header {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--title-text-color);
+}
+
+/* Секция Наши преимущества (Текст)  */
+.about-text {
+  width: 270px;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+}
+
+/* Секция Чем мы занимаемся */
+.section-image {
+  padding-top: 0;
+}
+.image-header {
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+}
+.image-list {
+  display: flex;
+}
+
+.image-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+/* Секция Наша Команда */
+.ourteam-section {
+  background-color: var(--ourteam-bacground-color);
+}
+
+.ourteam-list {
+  margin: 0;
+  padding: 0;
+  margin-top: -30px;
+  margin-left: -30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ourteam-list > .ourteam-item {
+  flex-basis: calc(100% / 4 - 30px);
+  box-shadow: var(--ourteam-card-shawdow);
+  background-color: var(--white-text-color);
+  border-radius: 0px 0px 4px 4px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.ourteam {
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+}
+.ourteam-card-content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+/* Список сотрудников абзац */
+.ourteam-co-worker {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+}
+/* Список сотрудников - описание */
+.ourteam-description {
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+}
+
+/* Футер */
+.footer {
+  background-color: var(--footer-background-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.footer-logo {
+  display: inline-block;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+}
+/* Ссылка на карту */
+.footer-link-map {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--white-text-color);
+}
+.footer-link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer-contacts-item {
+  margin-bottom: 9px;
+}
+.footer-contacts-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* ---------------Portfolio.html--------------- */
+/* Кнопки */
+.radiobutton {
+  cursor: pointer;
+  background-color: var(--ourteam-bacground-color);
+  border: 0;
+  border-radius: 4px;
+  padding: 6px 22px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.63;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.main-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.main-item {
+  display: flex;
+}
+
+.main-item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.radiobutton:hover {
+  color: var(--white-text-color);
+  background-color: var(--accent-color);
+  box-shadow: var(--portfolio-radiobutton-shawdow);
+  border-radius: 4px;
+}
+
+.menu-list {
+  margin: 0;
+  padding: 0;
+  margin-top: -30px;
+  margin-left: -30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.menu-list > .menu-item {
+  flex-basis: calc(100% / 3 - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.menu-item-content {
+  padding: 20px 24px;
+  border: 1px solid var(--portfolio-border-color);
+}
+.menu-header {
+  margin-bottom: 4px;
+}
