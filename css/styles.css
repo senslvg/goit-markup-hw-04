@@ -10,10 +10,13 @@
   --ourteam-bacground-color: #f5f4fa;
   --portfolio-background-color: #e5e5e5;
   --portfolio-border-color: #eeeeee;
+  --clients-fill-color: #afb1b8;
   --portfolio-radiobutton-shawdow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   --ourteam-card-shawdow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+  --portfolio-card-shawdow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 /* Global */
 body {
@@ -70,8 +73,6 @@ p:last-child {
 /* Hover - Focus */
 .nav-link:hover,
 .nav-link:focus,
-.contacts-link:hover,
-.contacts-link:focus,
 .footer-link-map:hover,
 .footer-link-map:focus,
 .footer-link:hover,
@@ -174,25 +175,46 @@ img {
 
 /* Контакты header */
 .contacts-link {
+  display: flex;
+  align-items: center;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  /* цвет для текста */
   color: var(--primary-text-color);
+  /* цвет для иконки */
+  fill: var(--primary-text-color);
 }
 
 .contacts-item:not(:last-child) {
   margin-right: 50px;
 }
+
 .contacts-list {
   display: flex;
   align-items: center;
   margin-left: auto;
 }
 
+.contacts-icon {
+  text-align: center;
+  margin-right: 10px;
+}
+
+.contacts-link:hover,
+.contacts-link:focus {
+  color: var(--accent-color);
+  fill: var(--accent-color);
+}
+
 /* Hero */
 .hero-section {
-  background-color: var(--footer-background-color);
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/img-header.jpg');
+  max-width: 1600px;
+  height: 600px;
+  background-color: #2f303a66;
   padding-top: 200px;
   padding-bottom: 200px;
 }
@@ -228,23 +250,6 @@ img {
   background-color: var(--accent-color);
 }
 
-/* Секция Наши услуги portfolio.html */
-.menu-header {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 2;
-  letter-spacing: 0.06em;
-  color: var(--title-text-color);
-}
-
-/* Секция наши услуги portfolio.html */
-.menu-text {
-  font-size: 16px;
-  line-height: 1.88;
-  letter-spacing: 0.03em;
-  color: var(--primary-text-color);
-}
-
 /* Секция Наши преимущества (Заголовки) */
 .about-list {
   display: flex;
@@ -252,6 +257,31 @@ img {
 .about-item:not(:last-child) {
   margin-right: 30px;
 }
+
+.about-item::before {
+  display: block;
+  content: '';
+  height: 120px;
+  background-size: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--ourteam-bacground-color);
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+.about-item:nth-child(1)::before {
+  background-image: url('../images/antenna-1.png');
+}
+.about-item:nth-child(2)::before {
+  background-image: url('../images/clock-1.png');
+}
+.about-item:nth-child(3)::before {
+  background-image: url('../images/diagram-1.png');
+}
+.about-item:nth-child(4)::before {
+  background-image: url('../images/astronaut-1.png');
+}
+
 .about-header {
   margin-bottom: 10px;
   font-weight: 700;
@@ -296,7 +326,30 @@ img {
 .ourteam-section {
   background-color: var(--ourteam-bacground-color);
 }
+.ourteam-social-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 30px;
+  fill: var(--clients-fill-color);
+}
+.ourteam-social-item:hover,
+.ourteam-social-item:focus {
+  fill: var(--white-text-color);
+  background-color: var(--accent-color);
+}
 
+.ourteam-social-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
 .ourteam-list {
   margin: 0;
   padding: 0;
@@ -325,7 +378,7 @@ img {
 }
 .ourteam-card-content {
   padding-top: 30px;
-  padding-bottom: 30px;
+  margin-bottom: 16px;
 }
 /* Список сотрудников абзац */
 .ourteam-co-worker {
@@ -346,12 +399,49 @@ img {
   color: var(--primary-text-color);
 }
 
+/* Постоянные клиенты */
+.clients-header {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  margin-bottom: 50px;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+}
+
+.clients-list {
+  display: flex;
+  justify-content: space-between;
+}
+.clients-item {
+  display: flex;
+  padding: 16px 32px;
+  width: 170px;
+  height: 92px;
+  cursor: pointer;
+  border: 1px solid var(--clients-fill-color);
+  border-radius: 4px;
+}
+.clients-item {
+  fill: var(--clients-fill-color);
+}
+.clients-item:hover,
+.clients-item:focus {
+  border-color: var(--accent-color);
+  fill: var(--accent-color);
+}
 /* Футер */
 .footer {
   background-color: var(--footer-background-color);
   padding-top: 60px;
   padding-bottom: 60px;
 }
+
+.footer-container {
+  display: flex;
+}
+
 .footer-logo {
   display: inline-block;
   padding-bottom: 0;
@@ -380,6 +470,46 @@ img {
 .footer-contacts-item:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
+}
+.footer-socials {
+  display: inline-block;
+  width: 206px;
+  padding-top: 12px;
+  margin-left: 70px;
+}
+.footer-socials-text {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white-text-color);
+}
+.footer-socials-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0;
+  fill: var(--white-text-color);
+}
+
+.footer-socials-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-socials-item:hover,
+.footer-socials-item:focus {
+  fill: var(--white-text-color);
+  background-color: var(--accent-color);
 }
 
 /* ---------------Portfolio.html--------------- */
@@ -419,6 +549,23 @@ img {
   border-radius: 4px;
 }
 
+/* Секция Наши услуги portfolio.html */
+.menu-header {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: var(--title-text-color);
+}
+
+/* Секция наши услуги portfolio.html */
+.menu-text {
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+}
+
 .menu-list {
   margin: 0;
   padding: 0;
@@ -431,6 +578,13 @@ img {
   flex-basis: calc(100% / 3 - 30px);
   margin-left: 30px;
   margin-top: 30px;
+  cursor: pointer;
+}
+
+.menu-item:hover,
+.menu-item:focus {
+  box-sizing: border-box;
+  box-shadow: var(--portfolio-card-shawdow);
 }
 
 .menu-item-content {
