@@ -260,7 +260,6 @@ img {
   margin-right: 30px;
 }
 
-
 .about-card {
   display: flex;
   align-items: center;
@@ -316,22 +315,25 @@ img {
 .ourteam-section {
   background-color: var(--ourteam-bacground-color);
 }
-.ourteam-social-list {
+.ourteam-socials-list {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   padding-left: 32px;
   padding-right: 32px;
   padding-bottom: 30px;
+  /* fill: var(--clients-fill-color); */
+}
+.ourteam-socials-link {
   fill: var(--clients-fill-color);
 }
-.ourteam-social-item:hover,
-.ourteam-social-item:focus {
+.ourteam-socials-link:hover,
+.ourteam-socials-link:focus {
   fill: var(--white-text-color);
   background-color: var(--accent-color);
 }
 
-.ourteam-social-item {
+.ourteam-socials-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -368,7 +370,7 @@ img {
 }
 .ourteam-card-content {
   padding-top: 30px;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 }
 /* Список сотрудников абзац */
 .ourteam-co-worker {
@@ -481,6 +483,8 @@ img {
   align-items: center;
   justify-content: space-between;
   padding-left: 0;
+}
+.footer-socials-link {
   fill: var(--white-text-color);
 }
 
@@ -492,7 +496,6 @@ img {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: white;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
